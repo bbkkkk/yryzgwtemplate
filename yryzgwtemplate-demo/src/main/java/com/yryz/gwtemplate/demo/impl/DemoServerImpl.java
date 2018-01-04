@@ -18,12 +18,11 @@ import java.util.Map;
  * @date 2016年10月23日 下午1:31:47
  */
 public class DemoServerImpl implements DemoServer {
-    @Resource
-    KgwApi kgwApi;
 
-    @KgwRegister(gwindex = "testindex1", gwname = "initcase", checkSession = true, expireTime = 30000, developer = "lxk")
+
+    @KgwRegister(gwindex = "testindex123", gwname = "initcase", checkSession = true, expireTime = 30000, developer = "admin")
     public JSONObject sayHello(Map<String, Object> params) {
-        System.out.println(kgwApi);
+
         System.err.println("server:这是收到的客户端数据：" + params);
         //加个标记
 //		str=str+"-（来自服务端的标记）";

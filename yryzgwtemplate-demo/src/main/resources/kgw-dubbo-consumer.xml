@@ -10,7 +10,7 @@
     <dubbo:application name="${kgw.dubbo.application.name}"/>
     <dubbo:registry protocol="zookeeper" address="${kgw.dubbo.registry.address}"/>
     <dubbo:protocol name="${kgw.dubbo.protocol.name}" port="${kgw.dubbo.protocol.port}"/>
-    <dubbo:reference id="kgwApi" interface="com.kgw.api.KgwApi" />
+    <dubbo:reference id="kgwApi" interface="com.kgw.api.KgwApi" retries="0" />
 
     <dubbo:service interface="com.yryz.gwtemplate.demo.DemoServer"
                    ref="demoServer" />
@@ -18,6 +18,8 @@
     <bean id="demoServer" class="com.yryz.gwtemplate.demo.impl.DemoServerImpl" >
     </bean>
 
-    <bean id="kgwAnnotationBeanProcessor" class="com.kgw.annotation.KgwAnnotationBeanProcessor"/>
+    <bean id="kgwAnnotationBeanProcessor" class="com.kgw.annotation.KgwAnnotationBeanProcessor">
+        <property name="kgwApi" ref="kgwApi"></property>
+    </bean>
 
 </beans>
