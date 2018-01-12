@@ -11,15 +11,9 @@
     <name>yryzgwtemplate-demo Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <dependencies>
-
         <dependency>
-            <groupId>kgateway</groupId>
+            <groupId>kgateway-annotation</groupId>
             <artifactId>kgateway-annotation</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>kgateway</groupId>
-            <artifactId>kgateway-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <!-- log -->

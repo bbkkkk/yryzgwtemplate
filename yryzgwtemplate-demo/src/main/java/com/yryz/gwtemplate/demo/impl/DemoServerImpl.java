@@ -20,13 +20,14 @@ import java.util.Map;
 public class DemoServerImpl implements DemoServer {
 
 
-    @KgwRegister(gwindex = "testindex123", gwname = "initcase", checkSession = true, expireTime = 30000, developer = "admin")
+    @KgwRegister(gwindex = "bbb", gwname = "initcase", checkSession = true, expireTime = 30000, developer = "lixiaokang")
     public JSONObject sayHello(Map<String, Object> params) {
 
         System.err.println("server:这是收到的客户端数据：" + params);
         //加个标记
 //		str=str+"-（来自服务端的标记）";
         params.put("str_", "-（来自服务端的标记）");
+        params.put("rstcode", "120");
         System.err.println("server:这是返回客户端的数据：" + params);
         return (JSONObject) JSONObject.toJSON(params);
     }
